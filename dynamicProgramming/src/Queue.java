@@ -15,6 +15,9 @@ public static class Queue {
     }
 
     public int peek(){
+        if (isEmpty()) {
+            throw new IllegalStateException("Queue is empty");
+        }
         return head.data;
     }
 
@@ -32,6 +35,9 @@ public static class Queue {
     }
 
     public int remove() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Queue is empty");
+        }
         int data = head.data;
         head = head.next;
 
